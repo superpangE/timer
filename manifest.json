@@ -1,8 +1,8 @@
 {
-  "name": "운동 타이머",
-  "short_name": "운동타이머",
+  "name": "Sports Timer",
+  "short_name": "Sports Timer",
   "description": "운동과 휴식을 반복하는 인터벌 타이머",
-  "start_url": "/",
+  "start_url": "/timer/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
