@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="운동타이머">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>운동 타이머</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>운동 타이머</h1>
+
+        <div class="status">
+            <h2 id="current-status">운동 시간</h2>
+        </div>
+
+        <div class="timer-display">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label for="work-time">운동 시간 (초)</label>
+                <input type="number" id="work-time" value="180" min="1">
+            </div>
+            <div class="setting-group">
+                <label for="rest-time">휴식 시간 (초)</label>
+                <input type="number" id="rest-time" value="60" min="1">
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn btn-primary">시작</button>
+            <button id="reset-btn" class="btn btn-secondary">리셋</button>
+        </div>
+
+        <div class="cycle-info">
+            <p>사이클: <span id="cycle-count">0</span>회</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed'));
+        }
+    </script>
+</body>
+</html>
